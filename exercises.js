@@ -44,7 +44,7 @@ var dog = {
   speak: "bark!"
 }
 
-console.log("My dog",dog.name, "is", dog.age, "year old and likes to", dog.speak);
+console.log("My dog", dog.name, "is", dog.age, "year old and likes to", dog.speak);
 
 //An empty object
 
