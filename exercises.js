@@ -14,8 +14,14 @@ Objects in Javascript can be compared to objects in real life. Objects has a col
     
     Console.log the object.
 */
-    
-  
+    var books = {
+      title: "The Obstacle is in the Way",
+      author: "Ryan Holiday",
+      category: "Self Help",
+      pages: 200
+
+    }
+  console.log(books);
 /*
 2.  Declare a variable named `dog` and create the following properties (key-value pairs) to the object:
    
@@ -30,8 +36,15 @@ Objects in Javascript can be compared to objects in real life. Objects has a col
  
  "My dog `name` is `age` year old and likes to `speak`."
 */ 
+var dog = {
+  name: "Daddy",
+  age: 8,
+  vegeterian: false,
+  color:  ["blue", "white"],
+  speak: "bark!"
+}
 
-
+console.log("My dog",dog.name, "is", dog.age, "year old and likes to", dog.speak);
 
 //An empty object
 
