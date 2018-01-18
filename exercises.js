@@ -291,16 +291,7 @@ function putInPlainBox(object){
 var plainBoxResult = putInPlainBox(plainBox);
 console.log(plainBoxResult); 
 
-/*function putInPlainBox(obj){
-   for(var i =0; i<10; i++){
-      var randomNum = Math.floor(Math.random()*10);
-      console.log(randomNum);
-   } 
-   return obj;
-}
 
-var plainBoxResult = putInPlainBox(plainBox);
-console.log(plainBoxResult);*/
 /*
 11. Detecting transmission
     Declare a function named detectingTransmission and a single parameter which will be an object. Within this function 
@@ -311,8 +302,14 @@ console.log(plainBoxResult);*/
 
     Invoke your function and pass in your stockCar object, store the result to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
  */
-
-
+function detectingTransmission(obj){
+  if (obj.automaticTransmission === true){
+    console.log("You are using an automatic transmission.");
+  }else{
+    console.log("nice 5 speed!");
+  }
+}
+detectingTransmission(stockCar);
 /*
 12.  Who's driving this thing?!
      As you may have noticed that the `stockCar` doesn't have a driver!
@@ -324,8 +321,12 @@ console.log(plainBoxResult);*/
      Invoke your function and pass in your objects, store the result to a variable named stockCarWithDriver, and inspect 
       your results. Consider using `plainPerson` as your driver.
  */
-
-
+function addDriver(carObj, person){
+  carObj.driver = person.name;
+  return carObj;
+}
+var stockCarWithDriver = addDriver(stockCar, plainPerson);
+console.log(stockCarWithDriver);
 /*
     #Final Boss
     The Dev League instructors want to ride your whip!
@@ -358,3 +359,22 @@ console.log(plainBoxResult);*/
         'Marifel, age 19, is riding dirty!'
         'Victor, age 19, is riding dirty!'
  */
+var passengerList = ["Jon", "Jason", "Tony", "Joe", "Jesse", "Nigel", "Kelli", "Marifel", "Victor"];
+var passengerAges = [19, 12, 21, 22, 16, 9, 19, 20, 15];
+function addPassengers(car, names, ages){
+  for (var i = 0; i < names.length; i++){
+    var passengerObj = {};
+    buildPerson(passengerObj, names[i], ages[i]);
+    car.passengers.push(passengerObj);
+  }
+  return car;
+}
+addPassengers(stockCar, passengerList, passengerAges);
+console.log(stockCar);
+
+function displayPassengers(car){
+  for (var i = 0; i < car.passengers.length; i++){
+    console.log(car.passengers[i].name + ", age "+ car.passengers[i].age + ", is riding dirty!");
+  }
+}
+displayPassengers(stockCar);
